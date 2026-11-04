@@ -481,3 +481,4 @@ body{background:radial-gradient(55vw 55vh at 8% 5%,rgba(99,102,241,.55),transpar
 @media (max-width: 720px) { .t-full { display: none; } .t-short { display: inline; } }
 .paths-sec .section-head { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
 .paths-sec .section-head p { max-width: none; }
+.section-head--center { text-align: center; justify-items: center; }
