@@ -488,3 +488,4 @@ body{background:radial-gradient(55vw 55vh at 8% 5%,rgba(99,102,241,.55),transpar
 .mode-cases .role { font: 600 1.0625rem/1.25 var(--display); color: var(--ink); }
 @media (max-width: 720px) { .paths-sec .mode-tabs ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .logo-tile img[src*="thapar"] { height: 76px; }
+.skills .reveal h3 { text-align: center; }
