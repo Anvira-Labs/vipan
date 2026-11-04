@@ -104,7 +104,7 @@ p { text-wrap: pretty; }
 .spec > div { padding: .7rem .85rem; border-bottom: 1px solid var(--rule); border-inline: 1px solid var(--rule); }
 .spec dt { margin-bottom: .1rem; }
 .spec dd { font-size: .96875rem; line-height: 1.4; font-weight: 500; }
-.hero-bottom { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); margin-top: clamp(1.75rem, 3.5vw, 3rem); align-items: start; }
+.hero-bottom { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); margin-top: clamp(1.75rem, 3.5vw, 3rem); align-items: start; }
 .statement { font: 600 clamp(1.625rem, 3.2vw, 2.75rem)/1.1 var(--display); letter-spacing: -.02em; text-wrap: balance; }
 .hero-sub { color: var(--muted); max-width: 62ch; }
 .hero-side .actions { margin-top: 1.25rem; }
