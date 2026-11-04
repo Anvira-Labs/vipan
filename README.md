@@ -1,6 +1,6 @@
 # Vipan Kumar portfolio website
 
-Static site: plain HTML, CSS and a little JS. No build step, server, trackers, analytics or external scripts. Fonts are self-hosted (SIL Open Font License; licences in `assets/fonts/`).
+Static site: plain HTML, CSS and a little JS. No build step or server. The only external script is Microsoft Clarity analytics (project `z8hk6c4tax`), added to the `<head>` of all 9 HTML files. Fonts are self-hosted (SIL Open Font License; licences in `assets/fonts/`).
 
 ## Preview locally
 
