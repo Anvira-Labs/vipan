@@ -95,8 +95,8 @@ p { text-wrap: pretty; }
 .btn.primary:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
 /* Hero */
-.hero { position: relative; padding-block: clamp(2rem, 5vw, 4rem) clamp(2.5rem, 6vw, 5rem); background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 56px 56px; border-bottom: 1px solid var(--rule-strong); }
-.hero-top { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: end; }
+.hero { position: relative; padding-block: 1rem clamp(2.5rem, 6vw, 5rem); background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 56px 56px; border-bottom: 1px solid var(--rule-strong); }
+.hero-top { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
 .hero h1 { font-size: clamp(5rem, 18.5vw, 14rem); line-height: .86; letter-spacing: -.012em; font-weight: 800; font-stretch: 86%; }
 .hero h1 span { display: block; }
 .hero h1 span + span { color: var(--accent); }
@@ -419,3 +419,4 @@ body{background:radial-gradient(55vw 55vh at 8% 5%,rgba(99,102,241,.55),transpar
 /* Metric tiles: padding and spacing inside and between the glass cards */
 .metrics { gap: 1rem; border-bottom: 0; padding-block: 1rem; }
 .metrics li { padding: 1.4rem 1.5rem; }
+.hero-cta { margin-top: .5rem; margin-bottom: 1.75rem; }
