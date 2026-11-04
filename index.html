@@ -21,7 +21,7 @@
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1312">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/BricolageGrotesque-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=202611041115">
+<link rel="stylesheet" href="assets/css/site.css?v=202611041121">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vipan Kumar", "url": "https://your-domain.example/", "jobTitle": "Principal Software Architect (Consultant)", "description": "Engineering leader and hands-on software architect with 15 years of multi-tenant SaaS and event-driven systems, based in Ontario (Greater Toronto Area).", "email": "mailto:vipankverma03@gmail.com", "sameAs": ["https://www.linkedin.com/in/vipankverma/"], "address": {"@type": "PostalAddress", "addressRegion": "ON", "addressCountry": "CA"}, "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Thapar University"}], "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Leadership with AI", "credentialCategory": "Executive Education", "url": "https://www.credential.net/8fca11be-3d39-4c0f-8441-4ba1a1315897", "recognizedBy": {"@type": "EducationalOrganization", "name": "Indian School of Business (ISB)"}}, "knowsAbout": ["Software architecture", "Engineering leadership", "Multi-tenant SaaS", "Event-driven architecture", "Microservices", "Java", "Spring Boot", "Node.js", "TypeScript", "Python", "FastAPI", "Kafka", "AWS", "Azure", "GCP", "Kubernetes", "Generative AI in production"]}</script>
 </head>
@@ -130,30 +130,41 @@
 
 <section class="section paths-sec" aria-labelledby="paths-h"><div class="wrap">
 <div class="section-head"><h2 id="paths-h">Hiring for a full-time role?</h2><p>My work spans engineering leadership and hands-on architecture. Here is the evidence for each, with the matching CV.</p></div>
-<div class="paths">
-<div class="path reveal">
-<h3>If you are hiring a leader</h3>
-<p class="targets">Target roles: Head / Director of Engineering, Engineering Manager</p>
-<ul>
+<nav class="mode-tabs" aria-label="Choose the kind of role" data-default="path-leader"><ul><li><a href="#path-leader">Hiring a leader</a></li><li><a href="#path-builder">Hiring a builder</a></li></ul></nav>
+<div class="mode-panel" id="path-leader">
+<div class="mode-main">
+<p class="label">Engineering leadership</p>
+<h3>A leader who has run large engineering orgs.</h3>
+<ul class="mode-proofs">
 <li>Ran tech orgs of 21 and 25–30 across AI/ML, backend, frontend, mobile, DevOps and QA, including reporting to the CEO.</li>
 <li>Grew one engineering team from 1 to about 15.</li>
 <li>Promoted 4 engineers into senior roles; ran appraisals, development plans and underperformance cases for 10 direct reports.</li>
 <li>Improved release velocity 40% and cut production incidents 35%.</li>
 <li>Led SOC 2 Type 1 implementation and achieved ISO 27001 certification.</li>
 </ul>
-<div class="actions"><a class="btn" href="assets/Vipan-Kumar-Engineering-Leader-CV.pdf" download>Engineering Leader CV (PDF)</a></div>
+<div class="actions"><a class="btn primary" href="assets/Vipan-Kumar-Engineering-Leader-CV.pdf" download>Engineering Leader CV (PDF)</a></div>
 </div>
-<div class="path reveal">
-<h3>If you are hiring a builder</h3>
-<p class="targets">Target roles: Software Architect, Principal or Staff Engineer, Tech Lead, Lead Software Engineer</p>
-<ul>
+<div class="mode-cases">
+<p class="label">Target roles</p>
+<ol><li><span class="role">Head of Engineering</span></li><li><span class="role">Director of Engineering</span></li><li><span class="role">Engineering Manager</span></li></ol>
+</div>
+</div>
+<div class="mode-panel" id="path-builder">
+<div class="mode-main">
+<p class="label">Hands-on architecture</p>
+<h3>A builder who still writes the hard parts.</h3>
+<ul class="mode-proofs">
 <li>Personally coded two of my three current client platforms, and run one as sole engineer.</li>
 <li>Found and fixed the JVM concurrency bottleneck behind 10x Kafka throughput myself.</li>
 <li>Designed the tiered GPU queue that took Dresma from 12 servers to 5.</li>
 <li>Built Lenskart's Virtual Try-On as sole engineer.</li>
 <li>Customized the core of WebKit2 for the Tizen browser at Samsung R&amp;D Institute.</li>
 </ul>
-<div class="actions"><a class="btn" href="assets/Vipan-Kumar-Hands-On-CV.pdf" download>Hands-On CV (PDF)</a></div>
+<div class="actions"><a class="btn primary" href="assets/Vipan-Kumar-Hands-On-CV.pdf" download>Hands-On CV (PDF)</a></div>
+</div>
+<div class="mode-cases">
+<p class="label">Target roles</p>
+<ol><li><span class="role">Software Architect</span></li><li><span class="role">Principal or Staff Engineer</span></li><li><span class="role">Tech Lead</span></li><li><span class="role">Lead Software Engineer</span></li></ol>
 </div>
 </div>
 </div></section>
@@ -359,7 +370,7 @@
 <div class="two">
 <div>
 <h3 class="sub-h">Education</h3>
-<div class="entry"><span class="logo-tile"><img src="assets/img/thapar-logo.png" alt="Thapar logo" width="250" height="44" loading="lazy"></span><h3>Bachelor of Engineering (B.E.), Computer Engineering</h3><p>Thapar University, Patiala, India</p></div>
+<div class="entry"><span class="logo-tile"><img src="assets/img/thapar-logo.png" alt="Thapar Institute of Engineering and Technology logo" width="420" height="382" loading="lazy"></span><h3>Bachelor of Engineering (B.E.), Computer Engineering</h3><p>Thapar University, Patiala, India</p></div>
 </div>
 <div>
 <h3 class="sub-h">Executive education</h3>
@@ -409,6 +420,6 @@
 <span>Vipan Kumar. Ontario, Greater Toronto Area.</span>
 <span>Updated November 2026. No trackers on this site.</span>
 </div></footer>
-<script src="assets/js/site.js?v=202611041110"></script>
+<script src="assets/js/site.js?v=202611041121"></script>
 </body>
 </html>

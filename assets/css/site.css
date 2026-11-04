@@ -482,3 +482,9 @@ body{background:radial-gradient(55vw 55vh at 8% 5%,rgba(99,102,241,.55),transpar
 .paths-sec .section-head { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
 .paths-sec .section-head p { max-width: none; }
 .section-head--center { text-align: center; justify-items: center; }
+
+/* Paths as tabs */
+.paths-sec .mode-tabs ul, .paths-sec .mode-tabs ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mode-cases .role { font: 600 1.0625rem/1.25 var(--display); color: var(--ink); }
+@media (max-width: 720px) { .paths-sec .mode-tabs ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.logo-tile img[src*="thapar"] { height: 76px; }

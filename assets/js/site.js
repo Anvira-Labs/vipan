@@ -26,8 +26,7 @@
 
   // Audience modes. The raw HTML is three stacked sections with plain jump links.
   // Only here do they become ARIA tabs, so JS-off visitors and crawlers get all three.
-  var modeNav = document.querySelector('.mode-tabs');
-  if (modeNav) {
+  Array.prototype.forEach.call(document.querySelectorAll('.mode-tabs'), function (modeNav) {
     var tabs = Array.prototype.slice.call(modeNav.querySelectorAll('a'));
     var ids = tabs.map(function (a) { return a.getAttribute('href').slice(1); });
     var list = modeNav.querySelector('ul');
@@ -86,7 +85,7 @@
     window.addEventListener('hashchange', showHash);
     // Hiding panels moves the page after the browser's own jump, so re-aim. CSS scroll-margin keeps the tabs in view.
     if (hashMode()) { showHash(); window.addEventListener('load', showHash); }
-  }
+  });
 
   var items = document.querySelectorAll('.reveal');
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
