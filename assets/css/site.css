@@ -569,3 +569,4 @@ html:root,html:root[data-theme="light"],html:root[data-theme="dark"],html:root:n
   .industries p { font-size: .8125rem; line-height: 1.45; }
 }
 @media (max-width: 720px) { #path-leader .mode-cases, #path-builder .mode-cases { display: none; } }
+@media (max-width: 720px) { #consultant .mode-cases, #outsourcing .mode-cases, #startup .mode-cases { display: none; } }
