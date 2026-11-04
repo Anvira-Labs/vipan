@@ -570,3 +570,12 @@ html:root,html:root[data-theme="light"],html:root[data-theme="dark"],html:root:n
 }
 @media (max-width: 720px) { #path-leader .mode-cases, #path-builder .mode-cases { display: none; } }
 @media (max-width: 720px) { #consultant .mode-cases, #outsourcing .mode-cases, #startup .mode-cases { display: none; } }
+
+/* Merged selector: four tabs; how-I-work */
+.modes .mode-tabs ul { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 720px) {
+  .modes .mode-tabs ul { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .3rem; }
+  .modes .mode-tabs a { font-size: .8125rem; padding: .5rem .2rem; min-height: 52px; }
+}
+.how-body { display: grid; gap: 1rem; max-width: 68ch; }
+.how-body p { font-size: 1.0625rem; line-height: 1.65; }

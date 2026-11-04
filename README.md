@@ -28,10 +28,11 @@ The home page has three modes, each with its own link. Replace the domain once i
 |---|---|
 | Someone who needs a consultant | `https://vipan.me/#consultant` |
 | Someone who wants a build handed to one owner | `https://vipan.me/#outsourcing` |
-| A startup hiring a senior person | `https://vipan.me/#startup` |
+| A team hiring a leader | `https://vipan.me/#path-leader` |
+| A team hiring a hands-on architect | `https://vipan.me/#path-builder` |
 
-- With no `#` in the link, the page opens on the startup mode. To change that, edit `data-default` on `.mode-tabs` in `index.html`.
-- To edit a mode, change its section in `index.html` (`id="consultant"`, `id="outsourcing"`, `id="startup"`). All three are plain HTML. With JavaScript off they appear one after another.
+- With no `#` in the link, the page opens on the consultant mode. To change that, edit `data-default` on `.mode-tabs` in `index.html`.
+- To edit a mode, change its section in `index.html` (`id="consultant"`, `id="outsourcing"`, `id="path-leader"`, `id="path-builder"`). All four are plain HTML. With JavaScript off they appear one after another.
 
 ## Deploy (free; any one of these)
 
