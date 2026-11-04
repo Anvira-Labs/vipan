@@ -579,3 +579,15 @@ html:root,html:root[data-theme="light"],html:root[data-theme="dark"],html:root:n
 }
 .how-body { display: grid; gap: 1rem; max-width: 68ch; }
 .how-body p { font-size: 1.0625rem; line-height: 1.65; }
+
+/* Recommendations */
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.75rem); }
+.quote { margin: 0; padding: 1.5rem; border-radius: 18px; background: var(--glass); border: 1px solid var(--glass-b); box-shadow: var(--glass-sh); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); display: flex; flex-direction: column; gap: 1.1rem; position: relative; }
+.quote::before { content: "\201C"; position: absolute; top: .35rem; left: 1rem; font: 800 4rem/1 var(--display); color: var(--accent); opacity: .5; }
+.quote blockquote { margin: 0; padding-top: 1.6rem; flex: 1; }
+.quote blockquote p { font-size: 1.0625rem; line-height: 1.6; }
+.quote figcaption { display: grid; gap: .15rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
+.quote figcaption b { font: 600 1rem var(--display); }
+.quote figcaption span { font-size: .875rem; color: var(--muted); line-height: 1.4; }
+.quotes-link { margin-top: 1.5rem; }
+@media (max-width: 720px) { .quotes { grid-template-columns: minmax(0, 1fr); } .quotes-link .btn { width: 100%; text-align: center; } }
