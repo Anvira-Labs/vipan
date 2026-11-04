@@ -542,7 +542,9 @@ body{background:radial-gradient(55vw 55vh at 8% 5%,rgba(99,102,241,.55),transpar
 }
 @media (max-width: 720px) {
   .tl { --cw: 80vw; }
-  .tl-nav { display: none; }
+  .tl-nav { width: 2.25rem; height: 2.25rem; font-size: 1rem; top: 1.65rem; opacity: .95; }
+  .tl-prev { left: 2px; } .tl-next { right: 2px; }
+  .tl-nav:disabled { opacity: .25; }
   .tl-dot { padding: .5rem .3rem; }
 }
 @media (prefers-reduced-motion: reduce) {
