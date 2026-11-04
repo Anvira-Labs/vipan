@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dresma GenAI Platform Architecture | Vipan Kumar</title>
+<meta name="description" content="Case study: how Vipan Kumar architected Dresma's multi-tenant GenAI pipelines, scaled to 50,000+ brands and 9M+ images, and cut GPU servers from 12 to 5 with a tiered priority queue.">
+<meta name="author" content="Vipan Kumar">
+<link rel="canonical" href="https://your-domain.example/work/dresma.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Vipan Kumar">
+<meta property="og:title" content="Dresma GenAI Platform Architecture | Vipan Kumar">
+<meta property="og:description" content="Case study: how Vipan Kumar architected Dresma's multi-tenant GenAI pipelines, scaled to 50,000+ brands and 9M+ images, and cut GPU servers from 12 to 5 with a tiered priority queue.">
+<meta property="og:url" content="https://your-domain.example/work/dresma.html">
+<meta property="og:image" content="https://your-domain.example/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vipan Kumar, engineering leader and hands-on software architect, Greater Toronto Area">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f4f0">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1312">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/BricolageGrotesque-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Serving GenAI imagery to 50,000+ brands on fewer than half the GPUs", "description": "Case study: how Vipan Kumar architected Dresma's multi-tenant GenAI pipelines, scaled to 50,000+ brands and 9M+ images, and cut GPU servers from 12 to 5 with a tiered priority queue.", "url": "https://your-domain.example/work/dresma.html", "author": {"@type": "Person", "name": "Vipan Kumar", "url": "https://your-domain.example/", "sameAs": ["https://www.linkedin.com/in/vipankverma/"]}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><img class="brand-mark" src="../assets/logo.svg" alt="" width="34" height="34"><span>Vipan Kumar</span></a>
+<nav class="site-nav" aria-label="Main">
+<a href="../index.html#work">Work</a>
+<a href="../index.html#career">Career</a>
+<a class="opt" href="../index.html#skills">Skills</a>
+<a class="opt" href="../index.html#references">References</a>
+<a href="../index.html#contact">Contact</a>
+</nav>
+</div></header>
+<main id="main">
+<div class="case-head"><div class="wrap">
+<a class="crumb" href="../index.html#work">All case studies</a>
+<p class="label">Dresma</p>
+<h1>Serving GenAI imagery to 50,000+ brands on fewer than half the GPUs</h1>
+<p class="dek">I architected the platform behind Dresma, a GenAI e-commerce content SaaS serving the US, UK and Europe, and led its entire tech org. The company has since grown to US$2M ARR on the same infrastructure.</p>
+<dl class="case-meta">
+<div><dt class="label">Role</dt><dd>Technical Architect &amp; Lead Engineering Manager (Nov 2023 – Feb 2025); Senior Engineering Manager (Feb 2022 – Oct 2023)</dd></div>
+<div><dt class="label">When</dt><dd>Feb 2022 – Feb 2025</dd></div>
+<div><dt class="label">Where</dt><dd>HQ USA; engineering in Gurugram, India</dd></div>
+<div><dt class="label">Team</dt><dd>25–30 across AI/ML, DevOps, mobile, backend, frontend and QA, reporting to the CEO</dd></div>
+</dl>
+</div></div>
+<div class="wrap">
+<ul class="metrics" aria-label="Key numbers">
+<li><strong>12 to 5</strong><span>GPU servers for the same output, about 58% fewer</span></li>
+<li><strong>9M+</strong><span>images for 50,000+ brands, about 500,000 images a month</span></li>
+<li><strong>&lt; 1 min</strong><span>first images on the premium tier, against a 2-hour SLA</span></li>
+<li><strong>US$2M</strong><span>ARR the company has since reached on the same infrastructure</span></li>
+</ul>
+<section class="case-sec reveal"><h2>Challenge</h2><div class="prose"><p>Generating images with GenAI models takes GPUs, and GPU capacity was limited. DoMyShoot and the batch tools had to serve brands across three markets inside a 2-hour SLA, while the company also needed to reduce cost.</p></div></section>
+<section class="case-sec"><h2>Approach</h2><div class="figs"><div class="prose"><h3>Multi-tenant GenAI pipelines</h3><p>I architected cloud-native, multi-tenant pipelines behind DoMyShoot and the batch tools: Node.js on the backend, React on the frontend, Python for the models and Java for automation.</p>
+<h3>A tiered priority queue instead of more GPUs</h3><p>Premium and standard queues ran across multi-cloud GPU capacity and cloud credits (AWS, GCP, Azure and private GPU partners). Premium users got first images in under a minute. Standard users got them in 10–15 minutes, well inside the 2-hour SLA.</p>
+<h3>In-house image models</h3><p>We benchmarked open-source models and trained custom models on synthetic data.</p>
+<dl class="model-table"><div><dt>Segmentation</dt><dd>SAM, U2-Net, BiRefNet</dd></div><div><dt>Detection, smart cropping</dt><dd>YOLO, Grounding DINO</dd></div><div><dt>Category classification</dt><dd>OpenAI CLIP</dd></div><div><dt>Generation</dt><dd>Stable Diffusion, SDXL</dd></div><div><dt>Listing text</dt><dd>Ollama self-hosted LLMs</dd></div></dl>
+<h3>Cost and organisation</h3><p>Infrastructure streamlining, deployment automation and performance tuning cut hosting and processing costs by up to 30%. I also led the cost reduction and team resizing.</p></div><figure class="fig"><ol class="flow"><li><b>Image jobs</b><span>DoMyShoot and batch tools</span></li><li><b>Priority queue</b><span>Premium and standard tiers</span></li><li><b>GPU capacity</b><span>AWS, GCP, Azure, private GPU partners, cloud credits</span></li><li><b>First images</b><span>Under 1 min premium; 10–15 min standard</span></li></ol><figcaption>Tiered priority queue on limited GPU capacity.</figcaption></figure><figure class="fig"><div class="unit-row"><b>Before: 12 GPU servers</b><div class="units" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div><div class="unit-row"><b>After: 5 GPU servers, same output</b><div class="units" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><figcaption>Each square is one GPU server. Same output, about 58% fewer servers.</figcaption></figure><figure class="fig"><dl class="scale"><div><dt>2-hour SLA</dt><dd><span class="b ref" style="--v:100%"></span>120 min</dd></div><div><dt>Standard tier</dt><dd><span class="b" style="--v:12.5%"></span>10–15 min</dd></div><div><dt>Premium tier</dt><dd><span class="b" style="--v:0.8%"></span>under 1 min</dd></div></dl><figcaption>Time to first images, drawn to scale.</figcaption></figure></div></section>
+<section class="case-sec reveal"><h2>Results</h2><div class="prose"><ul><li>Scaled DoMyShoot and batch tools to 50,000+ brands and 9M+ images, about 500,000 images a month.</li><li>Reduced GPU servers from 12 to 5 (about 58% fewer) for the same output.</li><li>First images in under 1 minute on the premium tier and 10–15 minutes on the standard tier, against a 2-hour SLA.</li><li>Cut hosting and processing costs by up to 30%.</li><li>The platform still powers Dresma, which has since grown to US$2M ARR on the same infrastructure, after my exit.</li><li><span class="flag">Company-reported</span> Brand impact of up to 60% conversion uplift and 85% lower content costs. These are Dresma's figures, not ones I measured.</li></ul></div></section>
+<section class="case-sec reveal"><h2>Stack</h2><div><ul class="tags"><li>Node.js</li><li>React</li><li>Python</li><li>Java</li><li>AWS</li><li>GCP</li><li>Azure</li><li>Private GPU partners</li><li>SAM</li><li>U2-Net</li><li>BiRefNet</li><li>YOLO</li><li>Grounding DINO</li><li>CLIP</li><li>Stable Diffusion</li><li>SDXL</li><li>Ollama</li></ul></div></section>
+<section class="case-sec reveal"><h2>Public references</h2><div class="prose"><ul><li>Top Founders podcast, "How Dresma Hit $2M ARR With Usage-Based Pricing"</li><li>The eCommerce Edge podcast, E471</li></ul></div></section>
+<nav class="case-nav" aria-label="More case studies">
+<a href="zodiacbee.html"><span class="label">Previous</span><b>ZodiacBee.com</b></a>
+<a class="next" href="lenskart.html"><span class="label">Next</span><b>Lenskart</b></a>
+</nav>
+</div>
+</main>
+<aside class="case-cta" aria-label="Contact"><div class="wrap">
+<p>A strong tech team addition</p>
+<div class="actions"><a class="btn" href="mailto:vipankverma03@gmail.com">vipankverma03@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/vipankverma/" rel="me">LinkedIn</a></div>
+</div></aside>
+<footer class="site-foot"><div class="wrap">
+<span>Vipan Kumar. Ontario, Greater Toronto Area.</span>
+<span>Updated November 2026. No trackers on this site.</span>
+</div></footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
