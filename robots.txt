@@ -1,5 +1,32 @@
-# TODO: replace your-domain.example with the final domain (see README.md).
+# Search engines and AI answer engines are welcome. Content is public by design.
 User-agent: *
 Allow: /
 
-Sitemap: https://your-domain.example/sitemap.xml
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://vipan.me/sitemap.xml

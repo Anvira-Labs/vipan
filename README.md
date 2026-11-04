@@ -15,7 +15,7 @@ Open http://localhost:8000 and stop the server with Ctrl+C. Opening `index.html`
 - `index.html`: hero, audience modes, impact, full-time role evidence, case study list, career timeline, skills, education, public references, contact.
 - `work/*.html`: one case study per page (Dresma, Lenskart, OnGrid, SignCatch and Walmart KDP, Gigforce, DroneCraft, Maruti Suzuki RFID, ZodiacBee).
 - `assets/`: CSS, JS, fonts, favicon, Open Graph image, both CV PDFs.
-- `sitemap.xml`, `robots.txt`: for search engines.
+- `sitemap.xml`, `robots.txt`: for search engines (AI crawlers are explicitly allowed). `llms.txt`: a plain-text summary for AI answer engines.
 - `.nojekyll`: keep this. It tells GitHub Pages to serve the files as they are.
 
 Header and footer are repeated in each page, so a change there has to be made in all 9 HTML files. To change colours, edit the tokens at the top of `assets/css/site.css`.
@@ -26,9 +26,9 @@ The home page has three modes, each with its own link. Replace the domain once i
 
 | Send this to | Link |
 |---|---|
-| Someone who needs a consultant | `https://your-domain.example/#consultant` |
-| Someone who wants a build handed to one owner | `https://your-domain.example/#outsourcing` |
-| A startup hiring a senior person | `https://your-domain.example/#startup` |
+| Someone who needs a consultant | `https://vipan.me/#consultant` |
+| Someone who wants a build handed to one owner | `https://vipan.me/#outsourcing` |
+| A startup hiring a senior person | `https://vipan.me/#startup` |
 
 - With no `#` in the link, the page opens on the startup mode. To change that, edit `data-default` on `.mode-tabs` in `index.html`.
 - To edit a mode, change its section in `index.html` (`id="consultant"`, `id="outsourcing"`, `id="startup"`). All three are plain HTML. With JavaScript off they appear one after another.
@@ -44,11 +44,7 @@ Then do TODO 1 below and submit the sitemap in Google Search Console and Bing We
 
 ### Before publishing
 
-1. **Set the final domain.** Every page, `sitemap.xml` and `robots.txt` use the placeholder `your-domain.example`. From this folder, replace it everywhere:
-   ```
-   grep -rl 'your-domain.example' . --include='*.html' --include='*.xml' --include='*.txt' | xargs sed -i '' 's#your-domain.example#YOURDOMAIN.com#g'
-   ```
-   A domain close to the name (for example one containing "vipankumar") helps people find you. Check availability yourself.
+1. **Domain.** Set to `https://vipan.me` in every page, `sitemap.xml`, `robots.txt` and `llms.txt`. To change it later, replace `vipan.me` in those files and in the `CNAME` file.
 2. **Decide on the phone number.** It is not in the site's HTML, but **both CV PDFs show +1 742 778 0842**, so the number becomes public and searchable when the PDFs do. Options: accept it, or export CV copies without the phone number and replace the files in `assets/`.
 3. **Check the Engineering Leader CV PDF against the site.** It says "Principal Engineering Consultant (Retainer)" where the site and the Hands-On CV say "Principal Software Architect (Consultant/Retainer)". It also shows "client-facing title: Associate Director of Engineering" for OnGrid, which the site does not use. Decide whether a public copy should say this.
 4. **Confirm client names may be public.** The site names DroneCraft Rides and its billing figure, Maruti Suzuki, ZodiacBee, Walmart KDP and clients such as Delhivery and Flipkart, as your CVs do. A CV goes to one recruiter; a website is public to anyone, including the clients.

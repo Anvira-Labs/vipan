@@ -1,0 +1,32 @@
+# Vipan Kumar
+
+> Engineering architect and leader based in Ontario (Greater Toronto Area), Canada. 15 years (2011 to present) building multi-tenant SaaS and event-driven systems on AWS, Azure and GCP, including a regulated BFSI platform. Currently Principal Software Architect (Consultant). Still hands-on in production code.
+
+Platforms and systems delivered for Lenskart, Walmart India KDP, Domino's India, Maruti Suzuki and Samsung R&D Institute.
+
+## Key results
+- OnGrid: 10x Kafka throughput across 13 topics with no added infrastructure, 99.95% uptime, AWS costs down 22%, led SOC 2 Type 1.
+- Dresma: GPU servers cut from 12 to 5 for the same output; platform grew to US$2M ARR.
+- Lenskart: orders a day scaled from 300-500 to 8,000+ with the same small team.
+- SignCatch and Walmart KDP: 500 kirana stores onboarded in beta; multi-tenant POS across 700+ retail locations.
+- Gigforce: first engineer; team grown from 1 to about 15; US$3M pre-Series A.
+
+## Case studies
+- [Dresma](https://vipan.me/work/dresma.html)
+- [Lenskart](https://vipan.me/work/lenskart.html)
+- [OnGrid](https://vipan.me/work/ongrid.html)
+- [SignCatch and Walmart KDP](https://vipan.me/work/signcatch-walmart-kdp.html)
+- [Gigforce](https://vipan.me/work/gigforce.html)
+- [DroneCraft Rides](https://vipan.me/work/dronecraft.html)
+- [Maruti Suzuki RFID](https://vipan.me/work/maruti-suzuki-rfid.html)
+- [ZodiacBee.com](https://vipan.me/work/zodiacbee.html)
+
+## Roles
+- Engineering leadership: Head of Engineering, Director of Engineering, Engineering Manager.
+- Hands-on architecture: Software Architect, Principal or Staff Engineer, Tech Lead, Lead Software Engineer.
+- Also available as a consultant, or for outsourced delivery owned end to end by one person.
+
+## Contact
+- Email: vipankverma03@gmail.com
+- LinkedIn: https://www.linkedin.com/in/vipankverma/
+- Site: https://vipan.me/

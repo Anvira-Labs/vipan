@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: replace your-domain.example with the final domain (see README.md). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://your-domain.example/</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://your-domain.example/work/dresma.html</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://your-domain.example/work/lenskart.html</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://your-domain.example/work/ongrid.html</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://your-domain.example/work/signcatch-walmart-kdp.html</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://your-domain.example/work/gigforce.html</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://your-domain.example/work/dronecraft.html</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://your-domain.example/work/maruti-suzuki-rfid.html</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://your-domain.example/work/zodiacbee.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vipan.me/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://vipan.me/work/dresma.html</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://vipan.me/work/lenskart.html</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://vipan.me/work/ongrid.html</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://vipan.me/work/signcatch-walmart-kdp.html</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://vipan.me/work/gigforce.html</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://vipan.me/work/dronecraft.html</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://vipan.me/work/maruti-suzuki-rfid.html</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://vipan.me/work/zodiacbee.html</loc><lastmod>2026-11-04</lastmod></url>
 </urlset>
