@@ -568,3 +568,4 @@ html:root,html:root[data-theme="light"],html:root[data-theme="dark"],html:root:n
   .industries .ind-co { font-size: .6875rem; margin-bottom: .45rem; }
   .industries p { font-size: .8125rem; line-height: 1.45; }
 }
+@media (max-width: 720px) { #path-leader .mode-cases, #path-builder .mode-cases { display: none; } }
