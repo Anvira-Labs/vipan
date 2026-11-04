@@ -420,3 +420,62 @@ body{background:radial-gradient(55vw 55vh at 8% 5%,rgba(99,102,241,.55),transpar
 .metrics { gap: 1rem; border-bottom: 0; padding-block: 1rem; }
 .metrics li { padding: 1.4rem 1.5rem; }
 .hero-cta { margin-top: .5rem; margin-bottom: 1.75rem; }
+.hero-right .hero-sub { margin-bottom: 1rem; }
+.modes .section-head { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+.modes .section-head p { max-width: none; }
+/* Hero restructure */
+.hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.hero-main { display: flex; flex-direction: column; gap: 1.25rem; min-width: 0; }
+.hero .hero-main h1 { font-size: clamp(3.5rem, 11vw, 8rem); line-height: .9; }
+.hero .hero-main h1 span { display: inline; }
+.hero .hero-main h1 span + span { margin-left: .2em; }
+.hero-main .statement { font-size: clamp(1.375rem, 2.4vw, 2rem); line-height: 1.25; max-width: 34ch; }
+.hero-main .hero-sub { font-size: 1.0625rem; line-height: 1.6; max-width: 58ch; }
+.hero-main .hero-cta { margin: .25rem 0 0; }
+.hero-grid > .spec { margin-top: .5rem; }
+@media (max-width: 1000px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid > .spec { margin-top: 0; }
+}
+@media (max-width: 480px) {
+  .hero .hero-main h1 { font-size: 14vw; white-space: nowrap; }
+  .hero-main .hero-cta .btn { width: 100%; text-align: center; }
+}
+.hero-aside { margin-top: .5rem; min-width: 0; }
+.hero-aside .spec { margin: 0; }
+.hero-aside .hero-cta { margin: 1.25rem 0 0; }
+@media (max-width: 1000px) { .hero-aside { margin-top: 0; } }
+@media (max-width: 480px) { .hero-aside .hero-cta .btn { width: 100%; text-align: center; } }
+
+/* ===== Modes restructure ===== */
+.mode-tabs { margin-bottom: 1.25rem; }
+.mode-tabs ul { gap: .6rem; border-bottom: 0; }
+.mode-tabs a { border-radius: 14px; min-height: 60px; border: 1px solid var(--glass-b, var(--rule)); transition: background .2s, color .2s, transform .2s; }
+.mode-tabs a:hover { transform: translateY(-1px); }
+.mode-panel { padding: clamp(1.25rem, 3vw, 2.5rem); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+.mode-panel:last-of-type { padding-bottom: clamp(1.25rem, 3vw, 2.5rem); }
+.mode-main .label { color: var(--accent); }
+.mode-main h3 { font-size: clamp(1.5rem, 2.8vw, 2.375rem); line-height: 1.12; max-width: 24ch; }
+.mode-proofs { gap: .9rem; margin-block: 1.25rem 1.75rem; }
+.mode-proofs li { line-height: 1.55; padding-left: 1.35rem; }
+.mode-proofs li::before { top: .8em; width: .6rem; }
+.mode-main .actions { display: flex; flex-wrap: wrap; gap: .6rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+.mode-cases { padding: 1.25rem 1.25rem 1rem; border: 1px solid var(--glass-b, var(--rule)); border-radius: 16px; background: var(--surface); }
+.mode-cases .label { margin-bottom: .25rem; }
+.mode-cases ol { counter-reset: case; border-top: 0; margin-top: .25rem; }
+.mode-cases li { counter-increment: case; position: relative; padding: .8rem 0 .8rem 2rem; }
+.mode-cases li:last-child { border-bottom: 0; }
+.mode-cases li::before { content: counter(case); position: absolute; left: 0; top: .85rem; font: 500 .8125rem var(--mono); color: var(--accent); }
+@media (min-width: 1001px) { .mode-cases { position: sticky; top: 92px; } }
+@media (max-width: 1000px) { .mode-panel { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 720px) {
+  .mode-tabs ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; }
+  .mode-tabs a { min-height: 56px; padding: .5rem .4rem; justify-content: center; text-align: center; font-size: .9375rem; line-height: 1.15; }
+  .mode-main .actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+  .mode-main .actions .btn.primary { grid-column: 1 / -1; }
+  .mode-main .actions .btn, .mode-main .actions .cv-alt { width: 100%; min-width: 0; text-align: center; justify-content: center; font-size: .8125rem; padding: .7rem .4rem; line-height: 1.2; }
+  .mode-main .actions .cv-alt { border: 1px solid var(--glass-b, var(--rule)); border-radius: 18px; background: var(--glass, transparent); }
+}
+
+.t-short { display: none; }
+@media (max-width: 720px) { .t-full { display: none; } .t-short { display: inline; } }
