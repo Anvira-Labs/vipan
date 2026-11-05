@@ -1,10 +1,24 @@
 # Vipan Kumar
 
-> Engineering architect and leader based in Ontario (Greater Toronto Area), Canada. 15 years (2011 to present) building multi-tenant SaaS and event-driven systems on AWS, Azure and GCP, including a regulated BFSI platform. Currently Principal Software Architect (Consultant). Still hands-on in production code.
+> Independent technology consultant, fractional CTO and software architect based in Ontario (Greater Toronto Area), Canada. 15+ years of experience (since 2011) building and scaling SaaS and enterprise platforms. Helps startups and growing businesses with architecture, cloud cost and performance, engineering leadership, modernization and practical AI integration. Still hands-on in production code.
 
-Platforms and systems delivered for Lenskart, Walmart India KDP, Domino's India, Maruti Suzuki and Samsung R&D Institute.
+## Services
+- Fractional CTO and technology advisory: technology strategy, architecture decisions, engineering roadmaps, technical due diligence, founder advisory.
+- Software and cloud architecture: scalable system design, microservices, distributed systems, AWS and GCP, APIs, performance, reliability.
+- Engineering leadership and delivery: team mentoring, delivery improvement, technical governance, hiring guidance, code quality.
+- Cloud cost and performance optimization: infrastructure assessments, bottleneck analysis, resource optimization, observability.
+- Product engineering and modernization: MVP architecture, legacy modernization, SaaS strategy, integrations, migrations.
+- AI integration and intelligent automation: LLM integrations, document-processing automation, AI-enabled workflows, enterprise AI architecture.
 
-## Key results
+## Ways to work together
+Technology advisory; fractional CTO; project-based consulting; engineering leadership support. https://vipan.me/#engagement
+
+## Results from independent consulting
+- Maruti Suzuki India: technical advisor; led the architecture of an active RFID worker safety system, live in 4 plants.
+- DroneCraft Rides: sole architect and engineer of a live video automation platform.
+- ZodiacBee.com: designed and built an SEO platform for North America, launched 15 Oct 2026.
+
+## Results from full-time employment (employers, not consulting clients)
 - OnGrid: 10x Kafka throughput across 13 topics with no added infrastructure, 99.95% uptime, AWS costs down 22%, led SOC 2 Type 1.
 - Dresma: GPU servers cut from 12 to 5 for the same output; platform grew to US$2M ARR.
 - Lenskart: orders a day scaled from 300-500 to 8,000+ with the same small team.
@@ -12,19 +26,17 @@ Platforms and systems delivered for Lenskart, Walmart India KDP, Domino's India,
 - Gigforce: first engineer; team grown from 1 to about 15; US$3M pre-Series A.
 
 ## Case studies
+- [Maruti Suzuki RFID](https://vipan.me/work/maruti-suzuki-rfid.html)
+- [DroneCraft Rides](https://vipan.me/work/dronecraft.html)
+- [ZodiacBee.com](https://vipan.me/work/zodiacbee.html)
+- [OnGrid](https://vipan.me/work/ongrid.html)
 - [Dresma](https://vipan.me/work/dresma.html)
 - [Lenskart](https://vipan.me/work/lenskart.html)
-- [OnGrid](https://vipan.me/work/ongrid.html)
 - [SignCatch and Walmart KDP](https://vipan.me/work/signcatch-walmart-kdp.html)
 - [Gigforce](https://vipan.me/work/gigforce.html)
-- [DroneCraft Rides](https://vipan.me/work/dronecraft.html)
-- [Maruti Suzuki RFID](https://vipan.me/work/maruti-suzuki-rfid.html)
-- [ZodiacBee.com](https://vipan.me/work/zodiacbee.html)
 
-## Roles
-- Engineering leadership: Head of Engineering, Director of Engineering, Engineering Manager.
-- Hands-on architecture: Software Architect, Principal or Staff Engineer, Tech Lead, Lead Software Engineer.
-- Also available as a consultant, or for outsourced delivery owned end to end by one person.
+## Experience
+Full role history, results, skills, education and public references: https://vipan.me/experience.html
 
 ## Contact
 - Email: vipankverma03@gmail.com

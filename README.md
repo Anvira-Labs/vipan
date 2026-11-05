@@ -1,38 +1,39 @@
 # Vipan Kumar portfolio website
 
-Static site: plain HTML, CSS and a little JS. No build step or server. The only external script is Microsoft Clarity analytics (project `z8hk6c4tax`), added to the `<head>` of all 9 HTML files. Fonts are self-hosted (SIL Open Font License; licences in `assets/fonts/`).
+Static site: plain HTML, CSS and a little JS. No build step or server. The only external script is Microsoft Clarity analytics (project `z8hk6c4tax`), added to the `<head>` of all 10 HTML files. Fonts are self-hosted (SIL Open Font License; licences in `assets/fonts/`).
 
 ## Preview locally
 
 ```
-cd /Users/vipan/scripts/portfolio_website
+cd /Users/vipan/scripts/vipan
 python3 -m http.server 8000
 ```
 Open http://localhost:8000 and stop the server with Ctrl+C. Opening `index.html` directly also works.
 
 ## Files
 
-- `index.html`: hero, audience modes, impact, full-time role evidence, case study list, career timeline, skills, education, public references, contact.
+- `index.html`: the consulting homepage. Hero, credibility strip, services, case-study cards, engagement models, about, recommendations, contact form.
+- `experience.html`: career timeline, impact, industries, skills, education, public references.
 - `work/*.html`: one case study per page (Dresma, Lenskart, OnGrid, SignCatch and Walmart KDP, Gigforce, DroneCraft, Maruti Suzuki RFID, ZodiacBee).
-- `assets/`: CSS, JS, fonts, favicon, Open Graph image, both CV PDFs.
+- `assets/`: CSS, JS, fonts, favicon, Open Graph image.
 - `sitemap.xml`, `robots.txt`: for search engines (AI crawlers are explicitly allowed). `llms.txt`: a plain-text summary for AI answer engines.
 - `.nojekyll`: keep this. It tells GitHub Pages to serve the files as they are.
 
-Header and footer are repeated in each page, so a change there has to be made in all 9 HTML files. To change colours, edit the tokens at the top of `assets/css/site.css`.
+Header and footer are repeated in each page, so a change there has to be made in all 10 HTML files. To change colours, edit the tokens at the top of `assets/css/site.css`.
 
-## Audience modes and links to send
-
-The home page has three modes, each with its own link. Replace the domain once it is set:
+## Links to send
 
 | Send this to | Link |
 |---|---|
-| Someone who needs a consultant | `https://vipan.me/#consultant` |
-| Someone who wants a build handed to one owner | `https://vipan.me/#outsourcing` |
-| A team hiring a leader | `https://vipan.me/#path-leader` |
-| A team hiring a hands-on architect | `https://vipan.me/#path-builder` |
+| A founder or business leader | `https://vipan.me/` |
+| Someone choosing how to work with you | `https://vipan.me/#engagement` |
+| Someone who wants the full track record | `https://vipan.me/experience.html` |
 
-- With no `#` in the link, the page opens on the consultant mode. To change that, edit `data-default` on `.mode-tabs` in `index.html`.
-- To edit a mode, change its section in `index.html` (`id="consultant"`, `id="outsourcing"`, `id="path-leader"`, `id="path-builder"`). All four are plain HTML. With JavaScript off they appear one after another.
+Older links keep working: `assets/js/site.js` redirects `#consultant`, `#outsourcing`, `#path-leader`, `#path-builder`, `#career`, `#skills`, `#industries`, `#education` and `#references` on the homepage to their new locations.
+
+## Contact form
+
+GitHub Pages has no server, so the form cannot deliver a message itself. It builds a draft in the visitor's email app, says nothing has been sent until they press Send, and offers a copy button if no draft opens. To receive submissions directly, connect a form service with your own account and replace the submit handler in `assets/js/site.js`. Show a success message only when that service confirms delivery.
 
 ## Deploy (free; any one of these)
 
@@ -46,14 +47,8 @@ Then do TODO 1 below and submit the sitemap in Google Search Console and Bing We
 ### Before publishing
 
 1. **Domain.** Set to `https://vipan.me` in every page, `sitemap.xml`, `robots.txt` and `llms.txt`. To change it later, replace `vipan.me` in those files and in the `CNAME` file.
-2. **Decide on the phone number.** It is not in the site's HTML, but **both CV PDFs show +1 742 778 0842**, so the number becomes public and searchable when the PDFs do. Options: accept it, or export CV copies without the phone number and replace the files in `assets/`.
-3. **Check the Engineering Leader CV PDF against the site.** It says "Principal Engineering Consultant (Retainer)" where the site and the Hands-On CV say "Principal Software Architect (Consultant/Retainer)". It also shows "client-facing title: Associate Director of Engineering" for OnGrid, which the site does not use. Decide whether a public copy should say this.
-4. **Confirm client names may be public.** The site names DroneCraft Rides and its billing figure, Maruti Suzuki, ZodiacBee, Walmart KDP and clients such as Delhivery and Flipkart, as your CVs do. A CV goes to one recruiter; a website is public to anyone, including the clients.
+4. **Confirm client names may be public.** The site names DroneCraft Rides and its billing figure, Maruti Suzuki, ZodiacBee, Walmart KDP and clients such as Delhivery and Flipkart. A website is public to anyone, including the clients.
 
-5. **Check the three modes.** These lines need your decision:
-   - "Fixed scope" in the consultant headline: your sources show retainer work only, so keep it only if you offer fixed-scope work.
-   - The DroneCraft billing figure now also appears in the outsourcing mode. If you remove it, remove it there, in the case study list and on the DroneCraft page.
-   - The outsourcing mode says you personally own the build. If you bring in other people, reword it.
 
 ### To make it stronger
 

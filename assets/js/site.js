@@ -1,6 +1,87 @@
 // Progressive enhancement only. With JS off, all content is visible and the OS theme applies.
 (function () {
   var root = document.documentElement;
+
+  // Older shared links pointed at sections that have since moved. Send them to the new home.
+  if (document.getElementById('services')) {
+    var moved = {
+      consultant: '#services', outsourcing: '#engagement',
+      'path-leader': 'experience.html', 'path-builder': 'experience.html',
+      career: 'experience.html#career', skills: 'experience.html#skills', industries: 'experience.html#industries',
+      education: 'experience.html#education', references: 'experience.html#references'
+    };
+    var dest = moved[location.hash.slice(1)];
+    if (dest) location.replace(dest);
+  }
+
+  // Mobile menu. With JS off, the links simply stay visible in the header.
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var menu = document.getElementById('site-nav');
+    if (!toggle || !menu) return;
+    function setOpen(open) {
+      menu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.textContent = open ? 'Close' : 'Menu';
+    }
+    toggle.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) { setOpen(false); toggle.focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (menu.classList.contains('open') && !e.target.closest('.site-head')) setOpen(false);
+    });
+  })();
+
+  // Contact form. The site is static, so there is no server to receive a submission. The form builds an
+  // email draft instead, and never claims the message was sent: only the visitor's email app can do that.
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var status = form.querySelector('.form-status');
+    var topic = form.elements.topic;
+
+    // "Discuss This Service" links arrive with the matching topic already chosen.
+    Array.prototype.forEach.call(document.querySelectorAll('[data-topic]'), function (a) {
+      a.addEventListener('click', function () { topic.value = a.getAttribute('data-topic'); });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var v = function (k) { return form.elements[k].value.trim(); };
+      var to = form.getAttribute('data-to');
+      var subject = 'Consulting enquiry: ' + v('topic') + (v('company') ? ' (' + v('company') + ')' : '');
+      var body = [
+        'Name: ' + v('name'),
+        'Business email: ' + v('email'),
+        'Company: ' + (v('company') || 'Not given'),
+        'Needs help with: ' + v('topic'),
+        '',
+        v('description')
+      ].join('\n');
+
+      status.hidden = false;
+      status.textContent = '';
+      var msg = document.createElement('p');
+      msg.textContent = 'Your email app should have opened with a draft. Your message is not sent until you press Send there. If no draft appeared, copy the message and email it to ' + to + '.';
+      var copy = document.createElement('button');
+      copy.type = 'button';
+      copy.textContent = 'Copy message';
+      copy.addEventListener('click', function () {
+        var text = 'To: ' + to + '\nSubject: ' + subject + '\n\n' + body;
+        var done = function (ok) { copy.textContent = ok ? 'Message copied' : 'Could not copy. Please select and copy your text.'; };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+        } else { done(false); }
+      });
+      status.appendChild(msg);
+      status.appendChild(copy);
+
+      location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  })();
   var btn = document.querySelector('.theme-btn');
 
   function current() {
@@ -23,69 +104,6 @@
     });
     paint();
   }
-
-  // Audience modes. The raw HTML is three stacked sections with plain jump links.
-  // Only here do they become ARIA tabs, so JS-off visitors and crawlers get all three.
-  Array.prototype.forEach.call(document.querySelectorAll('.mode-tabs'), function (modeNav) {
-    var tabs = Array.prototype.slice.call(modeNav.querySelectorAll('a'));
-    var ids = tabs.map(function (a) { return a.getAttribute('href').slice(1); });
-    var list = modeNav.querySelector('ul');
-    list.setAttribute('role', 'tablist');
-    list.setAttribute('aria-label', modeNav.getAttribute('aria-label'));
-    modeNav.removeAttribute('aria-label');
-    tabs.forEach(function (a, i) {
-      var panel = document.getElementById(ids[i]);
-      a.id = 'tab-' + ids[i];
-      a.setAttribute('role', 'tab');
-      a.setAttribute('aria-controls', ids[i]);
-      a.parentNode.setAttribute('role', 'presentation');
-      panel.setAttribute('role', 'tabpanel');
-      panel.setAttribute('aria-labelledby', a.id);
-      panel.setAttribute('tabindex', '0');
-    });
-    var selectMode = function (id, focus) {
-      tabs.forEach(function (a, i) {
-        var on = ids[i] === id;
-        a.setAttribute('aria-selected', on ? 'true' : 'false');
-        a.setAttribute('tabindex', on ? '0' : '-1');
-        document.getElementById(ids[i]).hidden = !on;
-        if (on && focus) a.focus();
-      });
-    };
-    var hashMode = function () {
-      var h = location.hash.slice(1);
-      return ids.indexOf(h) > -1 ? h : null;
-    };
-    var showHash = function () {
-      var h = hashMode();
-      if (!h) return;
-      selectMode(h);
-      document.getElementById(h).scrollIntoView({ block: 'start', behavior: 'instant' });
-    };
-    var choose = function (id, focus) {
-      selectMode(id, focus);
-      // Keeps the address shareable without jumping the page.
-      try { history.replaceState(null, '', '#' + id); } catch (e) { /* the address just will not update */ }
-    };
-    selectMode(hashMode() || modeNav.getAttribute('data-default') || ids[0]);
-    tabs.forEach(function (a, i) {
-      a.addEventListener('click', function (e) { e.preventDefault(); choose(ids[i]); });
-      a.addEventListener('keydown', function (e) {
-        var n = tabs.length, next = null;
-        if (e.key === 'ArrowRight') next = (i + 1) % n;
-        else if (e.key === 'ArrowLeft') next = (i - 1 + n) % n;
-        else if (e.key === 'Home') next = 0;
-        else if (e.key === 'End') next = n - 1;
-        else if (e.key === ' ') next = i;
-        if (next === null) return;
-        e.preventDefault();
-        choose(ids[next], true);
-      });
-    });
-    window.addEventListener('hashchange', showHash);
-    // Hiding panels moves the page after the browser's own jump, so re-aim. CSS scroll-margin keeps the tabs in view.
-    if (hashMode()) { showHash(); window.addEventListener('load', showHash); }
-  });
 
   // Career timeline. The HTML is a plain list (newest first) for JS-off visitors and crawlers.
   // Here it becomes a sideways carousel, oldest to newest, with the active role always centred.
