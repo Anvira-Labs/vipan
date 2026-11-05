@@ -2,6 +2,9 @@
 
 > Independent technology consultant, fractional CTO and software architect based in Ontario (Greater Toronto Area), Canada. 15+ years of experience (since 2011) building and scaling SaaS and enterprise platforms. Helps startups and growing businesses with architecture, cloud cost and performance, engineering leadership, modernization and practical AI integration. Still hands-on in production code.
 
+## Where
+Works with clients in Toronto, Brampton, Mississauga and across the Greater Toronto Area, and remotely across Canada, the United States and India. Also founder of Anvira Labs, a software development company in Gurugram, India: https://www.anviralabs.com/
+
 ## Services
 - Fractional CTO and technology advisory: technology strategy, architecture decisions, engineering roadmaps, technical due diligence, founder advisory.
 - Software and cloud architecture: scalable system design, microservices, distributed systems, AWS and GCP, APIs, performance, reliability.
