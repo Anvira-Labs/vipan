@@ -653,8 +653,7 @@ html:root,html:root[data-theme="light"],html:root[data-theme="dark"],html:root:n
 .contact-lead { margin-block: 1.1rem 1.5rem; max-width: 52ch; }
 .contact a { text-decoration-color: currentColor; }
 .contact :focus-visible { outline-color: var(--bg); }
-.contact-form { display: none; color-scheme: light; }
-.js .contact-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.contact-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; color-scheme: light; }
 .field { display: grid; gap: .3rem; align-content: start; min-width: 0; }
 .wide { grid-column: 1 / -1; }
 .field label { font-weight: 600; font-size: .9375rem; }
@@ -668,7 +667,7 @@ html:root,html:root[data-theme="light"],html:root[data-theme="dark"],html:root:n
 .contact .btn.primary:hover { background: var(--bg); color: var(--accent); filter: none; }
 .form-status { padding: .9rem 1rem; border: 1px solid var(--bg); border-radius: 8px; font-size: .96875rem; line-height: 1.45; }
 .form-status[hidden] { display: none; }
-.form-status button { display: block; margin-top: .6rem; min-height: 40px; padding: .4rem .8rem; font: 500 .8125rem var(--mono); color: inherit; background: none; border: 1px solid currentColor; border-radius: 6px; cursor: pointer; }
+.contact .btn.primary:disabled { opacity: .65; cursor: progress; }
 
 /* Long consulting headings read better across the full width. */
 #services .section-head, #work .section-head, #engagement .section-head, #recommendations .section-head { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
@@ -713,7 +712,7 @@ html:root,html:root[data-theme="light"],html:root[data-theme="dark"],html:root:n
   .svc-grid, .eng-grid { grid-template-columns: minmax(0, 1fr); }
   /* Keep the page short on phones: approach and stack remain one tap away on each case study. */
   .proof-facts > div:nth-child(2), .proof-facts > div:nth-child(5) { display: none; }
-  .js .contact-form { grid-template-columns: minmax(0, 1fr); }
+  .contact-form { grid-template-columns: minmax(0, 1fr); }
   .form-foot .btn { flex: 1 1 100%; justify-content: center; }
 }
 @media print {

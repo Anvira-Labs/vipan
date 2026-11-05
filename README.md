@@ -33,7 +33,7 @@ Older links keep working: `assets/js/site.js` redirects `#consultant`, `#outsour
 
 ## Contact form
 
-GitHub Pages has no server, so the form cannot deliver a message itself. It builds a draft in the visitor's email app, says nothing has been sent until they press Send, and offers a copy button if no draft opens. To receive submissions directly, connect a form service with your own account and replace the submit handler in `assets/js/site.js`. Show a success message only when that service confirms delivery.
+Submissions go through Web3Forms. The access key in `index.html` is public by design and only delivers to the inbox it was created with. To change that inbox, create a new key and replace the `access_key` value. The submit handler in `assets/js/site.js` shows success only when Web3Forms confirms delivery. Without JavaScript, the form posts as plain HTML.
 
 ## Deploy (free; any one of these)
 

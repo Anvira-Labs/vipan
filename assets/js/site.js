@@ -34,12 +34,13 @@
     });
   })();
 
-  // Contact form. The site is static, so there is no server to receive a submission. The form builds an
-  // email draft instead, and never claims the message was sent: only the visitor's email app can do that.
+  // Contact form, delivered by Web3Forms. Without JS it still posts as a normal HTML form.
+  // Success is only shown once the service confirms delivery. On failure the visitor's text stays in the form.
   (function () {
     var form = document.getElementById('contact-form');
     if (!form) return;
     var status = form.querySelector('.form-status');
+    var submit = form.querySelector('button[type="submit"]');
     var topic = form.elements.topic;
 
     // "Discuss This Service" links arrive with the matching topic already chosen.
@@ -47,63 +48,42 @@
       a.addEventListener('click', function () { topic.value = a.getAttribute('data-topic'); });
     });
 
+    function show(text) {
+      status.hidden = false;
+      status.textContent = text;
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
-      var v = function (k) { return form.elements[k].value.trim(); };
-      var to = form.getAttribute('data-to');
-      var subject = 'Consulting enquiry: ' + v('topic') + (v('company') ? ' (' + v('company') + ')' : '');
-      var body = [
-        'Name: ' + v('name'),
-        'Business email: ' + v('email'),
-        'Company: ' + (v('company') || 'Not given'),
-        'Needs help with: ' + v('topic'),
-        '',
-        v('description')
-      ].join('\n');
+      var label = submit.textContent;
+      var company = form.elements.company.value.trim();
+      form.elements.subject.value = 'Consulting enquiry: ' + topic.value + (company ? ' (' + company + ')' : '');
+      var failed = 'Your message could not be sent. Please email ' + form.getAttribute('data-fallback') + ' instead. Your text is still in the form so you can copy it.';
 
-      status.hidden = false;
-      status.textContent = '';
-      var msg = document.createElement('p');
-      msg.textContent = 'Your email app should have opened with a draft. Your message is not sent until you press Send there. If no draft appeared, copy the message and email it to ' + to + '.';
-      var copy = document.createElement('button');
-      copy.type = 'button';
-      copy.textContent = 'Copy message';
-      copy.addEventListener('click', function () {
-        var text = 'To: ' + to + '\nSubject: ' + subject + '\n\n' + body;
-        var done = function (ok) { copy.textContent = ok ? 'Message copied' : 'Could not copy. Please select and copy your text.'; };
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
-        } else { done(false); }
-      });
-      status.appendChild(msg);
-      status.appendChild(copy);
+      submit.disabled = true;
+      submit.textContent = 'Sending...';
+      status.hidden = true;
 
-      location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+        .then(function (res) {
+          return res.json().then(function (data) { return res.ok && data.success === true; });
+        })
+        .then(function (sent) {
+          if (sent) {
+            form.reset();
+            show('Thanks, your message has been sent. I will reply by email.');
+          } else {
+            show(failed);
+          }
+        })
+        .catch(function () { show(failed); })
+        .then(function () {
+          submit.disabled = false;
+          submit.textContent = label;
+        });
     });
   })();
-  var btn = document.querySelector('.theme-btn');
-
-  function current() {
-    var set = root.getAttribute('data-theme');
-    if (set) return set;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  function paint() {
-    if (!btn) return;
-    var t = current();
-    btn.textContent = t === 'dark' ? 'Light' : 'Dark';
-    btn.setAttribute('aria-label', 'Switch to ' + (t === 'dark' ? 'light' : 'dark') + ' mode');
-  }
-  if (btn) {
-    btn.addEventListener('click', function () {
-      var next = current() === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked: theme lasts this page only */ }
-      paint();
-    });
-    paint();
-  }
 
   // Career timeline. The HTML is a plain list (newest first) for JS-off visitors and crawlers.
   // Here it becomes a sideways carousel, oldest to newest, with the active role always centred.
