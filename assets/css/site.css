@@ -667,6 +667,7 @@ html:root,html:root[data-theme="light"],html:root[data-theme="dark"],html:root:n
 .contact .btn.primary:hover { background: var(--bg); color: var(--accent); filter: none; }
 .form-status { padding: .9rem 1rem; border: 1px solid var(--bg); border-radius: 8px; font-size: .96875rem; line-height: 1.45; }
 .form-status[hidden] { display: none; }
+.form-status.is-success { color: #fff; font-weight: 600; background: linear-gradient(135deg, #14532d, #15803d); border-color: #14532d; }
 .contact .btn.primary:disabled { opacity: .65; cursor: progress; }
 
 /* Long consulting headings read better across the full width. */

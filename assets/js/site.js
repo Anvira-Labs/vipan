@@ -48,8 +48,9 @@
       a.addEventListener('click', function () { topic.value = a.getAttribute('data-topic'); });
     });
 
-    function show(text) {
+    function show(text, sent) {
       status.hidden = false;
+      status.classList.toggle('is-success', !!sent);
       status.textContent = text;
     }
 
@@ -72,7 +73,7 @@
         .then(function (sent) {
           if (sent) {
             form.reset();
-            show('Thanks, your message has been sent. I will reply by email.');
+            show('Thanks, your message has been sent. I will reply by email.', true);
           } else {
             show(failed);
           }
