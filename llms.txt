@@ -2,6 +2,11 @@
 
 > Independent technology consultant, fractional CTO and software architect based in Ontario (Greater Toronto Area), Canada. 15+ years of experience (since 2011) building and scaling SaaS and enterprise platforms. Helps startups and growing businesses with architecture, cloud cost and performance, engineering leadership, modernization and practical AI integration. Still hands-on in production code.
 
+## Companies and sites
+- Befree Inc (Canada): technology company building its own health-tech products (BeFree app, JobPulse in build) and offering software, cloud and AI engineering. https://befreefit.ca/
+- Anvira Labs (India and Canada): software development company co-founded with Ritika Angrish. https://www.anviralabs.com/
+- BeFree app: personalized food and nutrition app. https://www.befree.fit/
+
 ## Where
 Works with clients in Toronto, Brampton, Mississauga and across the Greater Toronto Area, and remotely across Canada, the United States and India. Also founder of Anvira Labs, a software development company in Gurugram, India: https://www.anviralabs.com/
 
