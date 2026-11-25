@@ -43,6 +43,10 @@ Technology advisory; fractional CTO; project-based consulting; engineering leade
 - [SignCatch and Walmart KDP](https://vipan.me/work/signcatch-walmart-kdp.html)
 - [Gigforce](https://vipan.me/work/gigforce.html)
 
+## Writing
+- https://medium.com/@vipankverma03/i-shipped-10-production-releases-in-3-days-with-an-ai-engineering-team-heres-the-playbook-55fc219a4b5b
+- https://medium.com/@vipankverma03/scaling-a-video-platform-on-one-server-sleep-at-night-measure-the-rush-forecast-honestly-c8c2685f1844
+
 ## Experience
 Full role history, results, skills, education and public references: https://vipan.me/experience.html
 
