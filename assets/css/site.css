@@ -719,3 +719,8 @@ html:root,html:root[data-theme="light"],html:root[data-theme="dark"],html:root:n
 @media print {
   .contact-form, .nav-toggle { display: none !important; }
 }
+
+/* Brand logo: navy artwork, so it sits on white tiles against the dark theme */
+.brand .brand-mark { width: 38px; height: 38px; border-radius: 9px; box-shadow: none; }
+.foot-logo { display: inline-block; background: #fff; border-radius: 12px; padding: 8px 12px; line-height: 0; }
+.foot-logo img { width: 200px; height: auto; }
